@@ -1,0 +1,20 @@
+[Unit]
+Description=Double Giken D5MT+ Client
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=d5mt
+Group=d5mt
+ExecStart=/opt/double-giken/d5mt/bin/d5mt-launch --config /etc/d5mt/d5mt.yaml
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/d5mt /var/log/d5mt
+
+[Install]
+WantedBy=multi-user.target
