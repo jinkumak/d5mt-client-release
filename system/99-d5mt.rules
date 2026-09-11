@@ -1,0 +1,3 @@
+# Replace XXXX and YYYY with the approved D5MT+ USB vendor and product IDs.
+# Do not enable this rule until the hardware identifiers have been verified.
+SUBSYSTEM=="tty", ATTRS{idVendor}=="XXXX", ATTRS{idProduct}=="YYYY", SYMLINK+="d5mt", GROUP="dialout", MODE="0660"
