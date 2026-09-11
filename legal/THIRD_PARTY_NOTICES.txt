@@ -1,0 +1,10 @@
+D5MT+ THIRD-PARTY NOTICES
+
+This file must list every third-party component distributed with the client
+release, including its name, version, copyright attribution, license, and source
+location where required.
+
+Release engineering must generate and review this notice from the final staged
+artifact and SBOM before client delivery.
+
+No client release is approved while this file remains incomplete.
