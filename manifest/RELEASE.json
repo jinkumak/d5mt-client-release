@@ -1,0 +1,14 @@
+{
+  "product": "D5MT+ Client",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "target_hardware": "Raspberry Pi 5 / 4 GB RAM / 32 GB microSD",
+  "operating_system": "Ubuntu 22.04 LTS 64-bit",
+  "ros_distribution": "Humble",
+  "status": "draft",
+  "source_commit": null,
+  "build_date_utc": null,
+  "package_file": "packages/d5mt-client_1.0.0_arm64.deb",
+  "manual_file": "docs/USER_MANUAL_JA.pdf",
+  "copyright": "Copyright © 2026 Double Giken Co., Ltd."
+}
