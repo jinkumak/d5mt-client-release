@@ -1,0 +1,14 @@
+D5MT+ CLIENT SOFTWARE — PROPRIETARY LICENSE NOTICE
+
+Copyright © 2026 Double Giken Co., Ltd. All rights reserved.
+
+This software and accompanying materials are proprietary to Double Giken Co., Ltd.
+No ownership rights are transferred to the recipient. Use, copying, modification,
+reverse engineering, redistribution, sublicensing, disclosure, or publication is
+prohibited except to the extent expressly authorized by a separate written
+agreement with Double Giken Co., Ltd. or required by applicable law.
+
+Third-party components remain subject to their respective licenses.
+
+This notice is a release draft and must be approved by Double Giken Co., Ltd.
+before delivery to a client.
