@@ -1,25 +1,28 @@
 [Unit]
-Description=Double Giken D5MT+ Client (ROS 2 Jazzy)
-After=network-online.target
+Description=D5MT Robot Hand Client
 Wants=network-online.target
+After=network-online.target
+After=dev-ttyACM0.device
 
 [Service]
 Type=simple
-User=d5mt
-Group=d5mt
+
+User=double
+Group=double
 SupplementaryGroups=dialout
-WorkingDirectory=/var/lib/d5mt
-Environment=ROS_DISTRO=jazzy
-Environment=ROS_LOG_DIR=/var/log/d5mt
+
+Environment=HOME=/home/double
 Environment=LANG=C.UTF-8
-ExecStart=/opt/double-giken/d5mt/bin/d5mt-launch --config /etc/d5mt/d5mt.yaml
+Environment=PYTHONUNBUFFERED=1
+
+WorkingDirectory=/opt/double-giken/d5mt
+ExecStart=/opt/double-giken/d5mt/bin/d5mt-launch
+
 Restart=on-failure
 RestartSec=3
-NoNewPrivileges=true
-PrivateTmp=true
-ProtectSystem=strict
-ProtectHome=true
-ReadWritePaths=/var/lib/d5mt /var/log/d5mt
+
+KillSignal=SIGINT
+TimeoutStopSec=15
 
 [Install]
 WantedBy=multi-user.target
