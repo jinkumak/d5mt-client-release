@@ -8,8 +8,10 @@ Private distribution repository for the Double Giken D5MT+ ROS 2 client runtime.
 - 4 GB RAM
 - 32 GB microSD card
 - ARM64 / aarch64
-- Ubuntu 22.04 LTS
-- ROS 2 Humble
+- Ubuntu 24.04.5 LTS Desktop
+- ROS 2 Jazzy
+
+The approved client package must be built on ARM64 for Ubuntu 24.04 and ROS 2 Jazzy. Packages built for Ubuntu 22.04 / ROS 2 Humble are not supported by this release.
 
 ## Repository purpose
 
@@ -27,9 +29,31 @@ legal/      License, copyright, and third-party notices
 manifest/   Release metadata, checksums, and SBOM
 ```
 
+## Client installation
+
+Before installation, verify the target:
+
+```bash
+lsb_release -ds
+uname -m
+test -f /opt/ros/jazzy/setup.bash
+```
+
+Expected platform:
+
+```text
+Ubuntu 24.04.5 LTS
+aarch64
+ROS 2 Jazzy installed at /opt/ros/jazzy
+```
+
+Then follow [docs/INSTALLATION.md](docs/INSTALLATION.md).
+
 ## Security rules
 
 Never commit source workspaces, `.git` exports, tests, credentials, private keys, TLS keys, environment files, internal documents, debug data, or unapproved development artifacts.
+
+Python, HTML, CSS, and JavaScript files included in a Debian package can be inspected by the recipient. Proprietary serial-control, command-validation, and safety logic should be distributed as approved compiled C++ binaries.
 
 The release package and PDF manual are added only after an approved build. Do not use empty placeholder files with release artifact names.
 
