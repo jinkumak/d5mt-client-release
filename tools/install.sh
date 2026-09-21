@@ -48,7 +48,7 @@ if ! getent group d5mt >/dev/null; then
 fi
 
 if ! id d5mt >/dev/null 2>&1; then
-  useradd     --system     --gid d5mt     --home-dir /var/lib/d5mt     --shell /usr/sbin/nologin     d5mt
+  useradd --system --gid d5mt --home-dir /var/lib/d5mt --shell /usr/sbin/nologin d5mt
 fi
 
 usermod -aG dialout d5mt
@@ -57,12 +57,11 @@ install -d -m 0755 /etc/d5mt
 install -d -o d5mt -g d5mt -m 0755 /var/lib/d5mt /var/log/d5mt
 
 if [[ ! -f /etc/d5mt/d5mt.yaml ]]; then
-  install -o root -g d5mt -m 0640     "${ROOT_DIR}/config/d5mt.yaml.example"     /etc/d5mt/d5mt.yaml
+  install -o root -g d5mt -m 0640 "${ROOT_DIR}/config/d5mt.yaml.example" /etc/d5mt/d5mt.yaml
 fi
 
-install -m 0644   "${ROOT_DIR}/system/d5mt.service"   /etc/systemd/system/d5mt.service
-
-install -m 0644   "${ROOT_DIR}/system/99-d5mt.rules"   /etc/udev/rules.d/99-d5mt.rules
+install -m 0644 "${ROOT_DIR}/system/d5mt.service" /etc/systemd/system/d5mt.service
+install -m 0644 "${ROOT_DIR}/system/99-d5mt.rules" /etc/udev/rules.d/99-d5mt.rules
 
 udevadm control --reload-rules
 udevadm trigger
