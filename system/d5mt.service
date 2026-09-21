@@ -1,5 +1,5 @@
 [Unit]
-Description=Double Giken D5MT+ Client
+Description=Double Giken D5MT+ Client (ROS 2 Jazzy)
 After=network-online.target
 Wants=network-online.target
 
@@ -7,6 +7,11 @@ Wants=network-online.target
 Type=simple
 User=d5mt
 Group=d5mt
+SupplementaryGroups=dialout
+WorkingDirectory=/var/lib/d5mt
+Environment=ROS_DISTRO=jazzy
+Environment=ROS_LOG_DIR=/var/log/d5mt
+Environment=LANG=C.UTF-8
 ExecStart=/opt/double-giken/d5mt/bin/d5mt-launch --config /etc/d5mt/d5mt.yaml
 Restart=on-failure
 RestartSec=3
