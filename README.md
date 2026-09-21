@@ -24,7 +24,7 @@ packages/   Signed ARM64 Debian package
 config/     Client-editable configuration template
 system/     systemd and udev integration
 tools/      Installation and verification tools
-docs/       Client installation guide and manuals
+docs/       Client user manuals
 legal/      License, copyright, and third-party notices
 manifest/   Release metadata, checksums, and SBOM
 ```
@@ -47,7 +47,33 @@ aarch64
 ROS 2 Jazzy installed at /opt/ros/jazzy
 ```
 
-Then follow [docs/INSTALLATION.md](docs/INSTALLATION.md).
+Install and verify the approved package with the repository tools:
+
+```bash
+chmod +x tools/*.sh
+sudo ./tools/install.sh
+sudo ./tools/verify_installation.sh
+```
+
+The package installs and enables `d5mt.service`. Check it with:
+
+```bash
+systemctl is-enabled d5mt.service
+systemctl is-active d5mt.service
+sudo journalctl -u d5mt.service -n 100 --no-pager
+```
+
+Open the client Web interface at:
+
+```text
+https://192.168.0.210:8080/
+```
+
+A self-signed certificate warning may appear during the first connection.
+
+## Documentation
+
+- [5DMT+ ロボットハンド ユーザーマニュアル（日本語）](docs/5DMT_PLUS_USER_MANUAL_JA.md)
 
 ## Security rules
 
